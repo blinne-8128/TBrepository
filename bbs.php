@@ -17,8 +17,8 @@
 
 		<?php
 
-			$filename = "bbs.php"; //phpファイル名
-			$tablename = "bbs"; //テーブル名
+			$filename = 'bbs.php'; //phpファイル名
+			$tablename = 'テーブル名'; //テーブル名
 
 			//MySQLに接続
 			$dsn = 'データベース名';
