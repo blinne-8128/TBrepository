@@ -13,6 +13,8 @@
 
         <h1>TOP_PAGE</h1>
 
+		<br>
+
 		<?php
 
 			$filename = "toppage.php"; //phpファイル名
@@ -37,21 +39,27 @@
 
 			if(!empty($name)) {
 
-				foreach($results as $row){ //ユーザー名ありandパスワード一致
+				if($name == "webmaster" and $password == "shunihumyorokobiwo"){
+					header("location: webmaster.php");
 
-					if($row['name'] == $name and $row['password'] == $password){
-						header("location: photodiary_id={$row['id']}.php");
+				}else{
+
+					foreach($results as $row){ //ユーザー名ありandパスワード一致
+
+						if($row['name'] == $name and $row['password'] == $password){
+							header("location: photodiary_id={$row['id']}.php");
+						}
 					}
-				}
 
-				if(empty($judge)) { //ユーザー名なしorパスワード不一致
-					echo "エラー：ユーザー名またはパスワードが違います。<br>";
+					if(empty($judge)) { //ユーザー名なしorパスワード不一致
+						echo "エラー：ユーザー名またはパスワードが違います。";
+					}
 				}
 			}
 
 		?>
 
-		<br><br>
+		<br>
 
         <h3>ログインフォーム</h3>
 
